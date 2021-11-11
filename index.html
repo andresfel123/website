@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+ 
+  </head>
+  <body>
+    <a-scene>
+        <a-assets>
+          <img id="my-texture" src="NFT (1).png">
+          <img id="sky" src="piso.jpg">
+          <img id="piso" src="piso2.jpg">
+        </a-assets>
+
+
+      <a-entity position="0 0.7 -3" geometry="primitive: box" material="src:#my-texture"></a-entity>
+      <a-box color="#fff" scale="1 0.1 0.1" position="1 0.7 -3"></a-box>
+      <a-entity position="2 0.7 -3" geometry="primitive: box" material="src:url(NFT (1).png)"></a-entity>
+      <a-box color="#fff" scale="1 0.1 0.1" position="3 0.7 -3"></a-box>
+
+
+
+      <a-plane 
+      material="color:#fff;
+      src:#piso;
+      repeat:400 400;
+      opacity:0.7
+      "
+      position="0 0 0" rotation="-90 0 0" scale="1000 1000 1" ></a-plane>
+
+      <a-sky material="color:#fff;src:#sky;repeat:30 10"></a-sky>
+
+    </a-scene>
+    <script >
+      function foto(){
+       return document.querySelector('a-scene').components.screenshot.capture('perspective')
+      }
+    </script>
+  </body>
+</html>

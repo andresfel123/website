@@ -1,7 +1,9 @@
 <html>
   <head>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
- 
+     <style>
+      #subscribeForm{bottom:20px;font-size:11px;min-width:0;position:absolute}
+    </style>
   </head>
   <body>
     <a-scene>
@@ -30,6 +32,9 @@
       <a-sky material="color:#fff;src:#sky;repeat:30 10"></a-sky>
 
     </a-scene>
+    <div id="subscribeForm">
+      <button onclick="foto()">Prueba</button>
+    </div>
     <script >
       function foto(){
        return document.querySelector('a-scene').components.screenshot.capture('perspective')
